@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity repository-class="AppModelBundle\Entity\UserRepository" name="AppModelBundle\Entity\User" table="fos_user">
+        <id name="id" type="integer" column="id">
+            <generator strategy="IDENTITY"/>
+        </id>
+        
+        <field name="picture" type="text" column="picture" nullable="1"/>
+        <field name="age" type="integer" column="age" nullable="1"/>
+        
+    </entity>
+</doctrine-mapping>

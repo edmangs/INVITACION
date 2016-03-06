@@ -1,0 +1,10 @@
+parameters:
+    twig.app.name: twig_app_extension
+    
+services:
+    app.twig_extension:
+        class: AppFrontendBundle\Twig\AppExtension
+        public: true
+        tags:
+            - { name: twig.extension, alias: %twig.app.name% }
+        arguments: ['@twig.form.renderer', '@service_container']

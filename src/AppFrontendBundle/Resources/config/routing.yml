@@ -1,0 +1,7 @@
+app_frontend_homepage:
+    path:     /
+    defaults: { _controller: AppFrontendBundle:Default:index }
+
+app_frontend_game:
+    resource: "@AppFrontendBundle/Resources/config/routing/game.yml"
+    prefix: /game
