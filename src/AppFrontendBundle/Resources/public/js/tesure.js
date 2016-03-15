@@ -12,6 +12,11 @@ app.tesure = {
             if(e.currentTarget.checked === true){
                 var audio = document.getElementById("treasure-sound");
                 audio.play(); 
+                
+                audio.onended = function() {
+                    console.log("hi");
+                };
+                
             } else {
                 var curLet = 0; 
                 var audio = document.getElementById("treasure-sound");

@@ -6,27 +6,80 @@
 {% endblock %}
 
 {% block body %} 
-    
-    <div class="row">
-        <div>
-            <input type="checkbox" id="top-checkbox"/>
-            <label for="top-checkbox" id="treasurechest">
-                    <div id="treasurechest-top"></div>
-            </label>
-            <div id="treasurechest-bottom"></div>
-            <div id="treasurechest-bg"></div>
-            <div id="rupee"></div>
-            <audio id="treasure-sound">
-                <source src="{{ asset("bundles/appfrontend/audio/zeldaAudio.mp3") }}"></source>
-                Your browser isn't invited for super fun audio time.
-            </audio>
-            <div id="instructions">Abre el cofre</div>
+    <body>
+        <img class="img-fondo" src="{{ asset("bundles/appfrontend/images/casa-dentro.jpg") }}" class="center-block"/>
+        <div class="row">
+            <div>
+                <input type="checkbox" id="top-checkbox"/>
+                <label for="top-checkbox" id="treasurechest">
+                        <div id="treasurechest-top"></div>
+                </label>
+                <div id="treasurechest-bottom"></div>
+                <div id="treasurechest-bg"></div>
+                <div class="rupee" id="rupee"></div>
+                <div class="letter hidden" id="letter">
+                    <div class="letter-info">
+                        <h3>Hola <b>{{ 'Nombre de la persona' }}</b>.</h3>
+                        <p>Estas cordialmente invitado a la presentacion de pensar complejo.</p>
+                        <p>Que tendra lugar el dia <time>09 de Abril del 2015</time>.</p>
+                        <p>En el salon de clases {{ '#' }}.</p>
+                        <p>Hora inicio <time>{{ '09:00:00 A.M' }}</time>.</p>
+                    </div>
+                </div>
+                <audio id="treasure-sound">
+                    <source src="{{ asset("bundles/appfrontend/audio/zeldaAudio.mp3") }}"></source>
+                    Your browser isn't invited for super fun audio time.
+                </audio>
+                <div id="instructions">Abre el cofre</div>
+            </div>
         </div>
-    </div>
-    
-    {% block javascripts %}
-        {{ parent() }}
-        <script src="{{  asset('bundles/appfrontend/js/app.js') }}" ></script>
-        <script src="{{  asset('bundles/appfrontend/js/tesure.js') }}" ></script>
-    {% endblock %}
+
+        {% block javascripts %}
+            {{ parent() }}
+            <script src="{{  asset('bundles/appfrontend/js/app.js') }}" ></script>
+            <script src="{{  asset('bundles/appfrontend/js/tesure.js') }}" ></script>
+
+            <script>
+                $(document).ready(function(){
+                    "use strict";
+
+                    app.tesure = {
+                        treasure: "You Found a Rupee",
+                        tresString: "",
+                        getTresString: function(){
+                            app.tesure.tresString = app.tesure.treasure.split("");
+                        },
+                        getData: function(){
+                            app.tesure.getTresString();
+                            document.getElementById('top-checkbox').addEventListener('change', function(e){
+                                if(e.currentTarget.checked === true){
+                                    var audio = document.getElementById("treasure-sound");
+                                    audio.play(); 
+
+                                    audio.onended = function() {
+                                        app.tesure.showLetter();
+                                    };
+
+                                } else {
+                                    var curLet = 0; 
+                                    var audio = document.getElementById("treasure-sound");
+                                    audio.pause();
+                                    audio.currentTime = 0;
+
+                                    $(".letter").addClass("hidden");
+                                    $(".rupee").removeClass("hidden");
+                                }
+                            });
+                        },
+                        showLetter: function(){
+                            $(".letter").removeClass("hidden");
+                            $(".rupee").addClass("hidden");
+                        }
+                    };
+
+                    window.onload = app.tesure.getData();
+                });
+            </script>
+        {% endblock %}
+    </body>
 {% endblock %}
