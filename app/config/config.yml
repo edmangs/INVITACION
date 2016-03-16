@@ -11,7 +11,7 @@ imports:
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 
 parameters: 
-    project_name: Base
+    project_name: "Invitacion presentación pensar complejo"
 
 framework:
     #esi:             ~
@@ -42,6 +42,9 @@ twig:
         project_name: %project_name%
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    form:
+        resources:
+            - 'SonataCoreBundle:Form:datepicker.html.twig'
 
 # Doctrine Configuration
 doctrine:

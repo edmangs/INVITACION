@@ -29,11 +29,14 @@ sonata_admin:
         short_object_description: SonataAdminBundle:Helper:short-object-description.html
     
     dashboard:
+        blocks:
+            - { position: left,  type: sonata.admin.block.admin_list, settings: { groups: [User] } }
+            - { position: right,  type: sonata.admin.block.admin_list, settings: { groups: [admin] } }
+        
         groups:
             User:
                 roles: [ ROLE_SUPER_ADMIN ]
                 label: 'Usuarios'
-            
-        blocks:
-            - { position: left,  type: sonata.admin.block.admin_list, settings: { groups: [User] } }
-            - { position: right,  type: sonata.admin.block.admin_list, settings: { groups: [admin] } }
+            admin: 
+                roles: [ ROLE_SUPER_ADMIN ]
+                label: 'Administrador'

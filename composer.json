@@ -24,7 +24,7 @@
         
         "doctrine/doctrine-fixtures-bundle": "2.2.1",
         "doctrine/data-fixtures": "1.1.1", 
-        "gedmo/doctrine-extensions": "2.4.7",
+        "gedmo/doctrine-extensions": "2.4.13",
         
         "sonata-project/core-bundle": "2.3.9",
         "sonata-project/admin-bundle": "2.3.7",

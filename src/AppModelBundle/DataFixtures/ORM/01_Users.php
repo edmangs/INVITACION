@@ -48,9 +48,6 @@ class FixturesUsers extends AbstractFixture implements OrderedFixtureInterface, 
             )
         );
         
-        
-        
-        
         foreach ($users as $user) {
             $new_user = new User();
             $new_user->setUsername($user['username']);

@@ -1,0 +1,35 @@
+{% extends '::standard_layout.html.twig' %}
+
+{% block body %}
+    
+    {% block sonata_page_content %}
+        <section class="content-header">
+            {% block sonata_page_content_header %}
+                {% block sonata_page_content_nav %}
+                    <nav class="navbar navbar-default" role="navigation">
+                        {% block tab_menu_navbar_header %}
+                            <div class="navbar-header">
+                                <span class="navbar-brand">Send email</span>
+                            </div>
+                        {% endblock %}
+                    </nav>
+                    
+                    <section class="content">
+                        {% include 'AppBackendBundle:Default:flash.message.html.twig' %}
+                        {% if users is defined and users is not null %}
+                            <div>Varios usuarios</div>
+                        {% elseif user is defined and user is not null %}
+                            <form action="" method="POST">
+                                <span>Desea enviar el correo al usuario: <b>{{ user.email }}</b></span>
+                                <button class="btn btn-success">Yes</button>
+                            </form>
+                        {% else %}
+                            <div>Not user for action</div>
+                        {% endif %}
+                    </section>
+                {% endblock sonata_page_content_nav %}
+
+            {% endblock sonata_page_content_header %}
+        </section>
+    {% endblock sonata_page_content %}
+{% endblock %}

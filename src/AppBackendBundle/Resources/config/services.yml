@@ -7,3 +7,9 @@ services:
         arguments: [~, AppModelBundle\Entity\User, AppBackendBundle:UserAdmin]
         tags:
             - {name: sonata.admin, manager_type: orm, group: User, label: User}
+
+    app_backend.admin.invitation:
+        class: AppBackendBundle\Admin\InvitationAdmin
+        arguments: [~, AppModelBundle\Entity\Invitation, AppBackendBundle:InvitationAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Invitation}
