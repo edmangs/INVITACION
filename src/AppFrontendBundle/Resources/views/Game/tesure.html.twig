@@ -17,13 +17,19 @@
                 <div id="treasurechest-bottom"></div>
                 <div id="treasurechest-bg"></div>
                 <div class="rupee" id="rupee"></div>
-                <div class="letter hidden" id="letter">
+                <div class="letter" id="letter">
                     <div class="letter-info">
-                        <h3>Hola <b>{{ 'Nombre de la persona' }}</b>.</h3>
-                        <p>Estas cordialmente invitado a la presentacion de pensar complejo.</p>
-                        <p>Que tendra lugar el dia <time>09 de Abril del 2015</time>.</p>
-                        <p>En el salon de clases {{ '#' }}.</p>
-                        <p>Hora inicio <time>{{ '09:00:00 A.M' }}</time>.</p>
+                        <h3>Hola <b>{{ invitation.name }} {{ invitation.lastname }}</b>.</h3>
+                        <p>Estas cordialmente invitado a la {{ dataInvitation.presentation }}.</p>
+                        <p>Que tendra lugar el día <time>{{ dataInvitation.dataInvitation|date('d M Y') }}</time>.</p>
+                        <p>En el salon de clases {{ dataInvitation.livingRoom }}.</p>
+                        <p>Hora inicio <time>{{ dataInvitation.dataInvitation|date('H:i:s') }}</time>.</p>
+                        <ul>
+                            <p>Estan cordialmente invitados por:</p>
+                            {% for host in dataInvitation.hosts %}
+                                <li>{{ host }}</li>
+                            {% endfor %}
+                        </ul>
                     </div>
                 </div>
                 <audio id="treasure-sound">

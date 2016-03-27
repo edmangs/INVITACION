@@ -13,7 +13,6 @@
         <field name="name" type="string" column="name" length="255" nullable="0"/>
         <field name="lastname" type="string" column="lastname" length="255" nullable="0"/>
         <field name="email" type="string" column="email" length="255" nullable="0"/>
-        <field name="dateInvitation" type="datetime" column="dateInvitation" nullable="0"/>
         <field name="viewed" type="boolean" column="viewed" nullable="1"/>
 
         <field name="created" type="datetime">

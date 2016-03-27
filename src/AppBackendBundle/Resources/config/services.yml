@@ -12,4 +12,10 @@ services:
         class: AppBackendBundle\Admin\InvitationAdmin
         arguments: [~, AppModelBundle\Entity\Invitation, AppBackendBundle:InvitationAdmin]
         tags:
-            - {name: sonata.admin, manager_type: orm, group: admin, label: Invitation}
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Invitados}
+
+    app_backend.admin.data_invitation:
+        class: AppBackendBundle\Admin\DataInvitationAdmin
+        arguments: [~, AppModelBundle\Entity\DataInvitation, AppBackendBundle:DataInvitationAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: "Datos de la Invitación"}

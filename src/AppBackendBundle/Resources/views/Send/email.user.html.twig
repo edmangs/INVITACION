@@ -17,10 +17,43 @@
                     <section class="content">
                         {% include 'AppBackendBundle:Default:flash.message.html.twig' %}
                         {% if users is defined and users is not null %}
-                            <div>Varios usuarios</div>
+                            <form action="" method="POST">
+                                <span>Desea enviar el correo a todos los invitados</span>
+                                
+                                {% for key, child in form %}
+                                    {{ form_widget(child, {attr: {"placeholder": child.vars.label, "data-id": key } }) }}
+                                    {% if form_errors(child) %}
+                                        <div class="alert alert-danger">
+                                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                            {{ form_errors(child) }}
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+
+                                {{ form_rest(form) }}
+                                
+                                <br>
+                                
+                                <button class="btn btn-success">Yes</button>
+                            </form>
                         {% elseif user is defined and user is not null %}
                             <form action="" method="POST">
                                 <span>Desea enviar el correo al usuario: <b>{{ user.email }}</b></span>
+                                
+                                {% for key, child in form %}
+                                    {{ form_widget(child, {attr: {"placeholder": child.vars.label, "data-id": key } }) }}
+                                    {% if form_errors(child) %}
+                                        <div class="alert alert-danger">
+                                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                            {{ form_errors(child) }}
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+
+                                {{ form_rest(form) }}
+                                
+                                <br>
+                                
                                 <button class="btn btn-success">Yes</button>
                             </form>
                         {% else %}

@@ -33,7 +33,6 @@ class InvitationAdmin extends Admin
             ->add('name')
             ->add('lastname')
             ->add('email')
-            ->add('dateInvitation')
             ->add('viewed')
             ->add('_action', 'actions', array(
                 'actions' => array(
@@ -57,9 +56,6 @@ class InvitationAdmin extends Admin
             ->add('name')
             ->add('lastname')
             ->add('email')
-            ->add('dateInvitation', 'sonata_type_datetime_picker', array(
-                'format' => 'YYYY/dd/MM HH:MM:SS'
-            ))
         ;
     }
 
@@ -76,7 +72,6 @@ class InvitationAdmin extends Admin
             ->add('viewed')
             ->add('created')
             ->add('slug')
-            ->add('id')
         ;
     }
     

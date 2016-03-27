@@ -114,7 +114,7 @@ app.game = {
             }
             if((app.game.p1.x === 400 && app.game.p1.y === 400) || (app.game.p1.x === 450 && app.game.p1.y === 400)){
                 console.log(app.dev);
-                window.location.href = window.location.origin +  app.dev + "/game/tesure";
+                window.location.href = window.location.origin +  app.dev + "/game/tesure/" + app.slug;
             }
         }
         //

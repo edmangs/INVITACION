@@ -1,0 +1,19 @@
+<html>
+    <body>
+        <div>
+            <p style="background: #c3c3c3; border-radius: 5px; color: white; text-align: center; padding: 10px;">
+                Hola <b>{{ user.name }} {{ user.lastname }}</b>
+            </p>
+            <p>Estás cordialmente invitado a la <b>{{ entity.presentation }}</b></p>
+            <p>Para obtener toda la información necesaria acede
+                <a 
+                    style="padding: 7px; background: #74AF36; color: white; text-decoration: none; border-radius: 5px;" 
+                    href="{{ app.request.getSchemeAndHttpHost() ~ app.request.getBaseURL() ~ "/game/" ~ user.slug }}">
+                    Aquí
+                </a>
+            </p>
+            <img style="    margin: auto; display: block; width: auto; max-height: 300px;" 
+                 src="http://fundacionsicomoro.org/wp-content/uploads/2015/12/no_hay_competitividad_sin_complejidad.jpg"/>
+        </div>
+    </body>
+</html>

@@ -9,7 +9,7 @@ class Invitation
 {
     //---------------------------- Modify --------------------------------------
     public function __toString() {
-        return $this->getName() ? $this->getName() . ' ' . $this->getLastname() : '';
+        return $this->getSlug() ? $this->getSlug() : '';
     }
     //-------------------------- End Modify ------------------------------------
     
@@ -27,11 +27,6 @@ class Invitation
      * @var string
      */
     private $email;
-
-    /**
-     * @var \DateTime
-     */
-    private $dateInvitation;
 
     /**
      * @var boolean
@@ -129,30 +124,6 @@ class Invitation
     public function getEmail()
     {
         return $this->email;
-    }
-
-    /**
-     * Set dateInvitation
-     *
-     * @param \DateTime $dateInvitation
-     *
-     * @return Invitation
-     */
-    public function setDateInvitation($dateInvitation)
-    {
-        $this->dateInvitation = $dateInvitation;
-
-        return $this;
-    }
-
-    /**
-     * Get dateInvitation
-     *
-     * @return \DateTime
-     */
-    public function getDateInvitation()
-    {
-        return $this->dateInvitation;
     }
 
     /**
