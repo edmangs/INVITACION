@@ -5,7 +5,7 @@ var app = {
     slug: '',
     getData: function(){
         if($(".data-info").length > 0){
-            if($(".data-info").attr("data-enviroment")){
+            if($(".data-info").attr("data-enviroment") === "dev"){
                 app.dev = "/app_dev.php";
             }
         }
