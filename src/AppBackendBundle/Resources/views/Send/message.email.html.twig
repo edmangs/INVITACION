@@ -13,7 +13,12 @@
                 </a>
             </p>
             <img style="margin: auto; display: block; width: auto; max-height: 300px;" 
-                 src="http://fundacionsicomoro.org/wp-content/uploads/2015/12/no_hay_competitividad_sin_complejidad.jpg"/>
+                {% if ".localhost" in app.request.getSchemeAndHttpHost() %}
+                    src="http://fundacionsicomoro.org/wp-content/uploads/2015/12/no_hay_competitividad_sin_complejidad.jpg"
+                {% else %}
+                    src="{{ asset("bundles/appfrontend/images/complejidad.jpg") }}"
+                {% endif %}
+            />
         </div>
     </body>
 </html>
