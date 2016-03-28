@@ -33,7 +33,7 @@ class FixturesDataInvitacion extends AbstractFixture implements OrderedFixtureIn
         $em = $this->container->get('doctrine')->getEntityManager();
         
         $entities = array(
-            array('livingRoom' => "Modulo 7A 302", "hosts" => array("Edwin Gutierrez", "Dos"), "presentation" => "presentacion de pensar complejo")
+            array('livingRoom' => "Modulo 7A 302", "hosts" => array("Edwin Gutierrez", "Dos"), "presentation" => "presentacion de pensar complejo", "active" => true)
         );
         
         foreach ($entities as $entity) {
@@ -42,6 +42,8 @@ class FixturesDataInvitacion extends AbstractFixture implements OrderedFixtureIn
             $object->setLivingRoom($entity["livingRoom"]);
             $object->setDataInvitation(DateTime::createFromFormat('Y-m-d H:i:s', '2016-04-09 09:00:00'));
             $object->setPresentation($entity["presentation"]);
+            $object->setActive($entity["active"]);
+            
             $object->setHosts($entity["hosts"]);
             
             $manager->persist($object);
