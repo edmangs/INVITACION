@@ -5,3 +5,8 @@ app_frontend_game_index:
 app_frontend_game_tesure:
     path:     /tesure/{slug}
     defaults: { _controller: AppFrontendBundle:Game:tesure, slug: null } 
+    
+    
+app_frontend_game_view_invitation:
+    path:     /view/invitation/{slug}
+    defaults: { _controller: AppFrontendBundle:Game:userViewInvitation, slug: null } 

@@ -8,6 +8,11 @@
     src: url("../font-awesome/fonts/HenryMorganHand.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: 'Parisienne-Regular';
+    src: url("../font-awesome/fonts/Parisienne-Regular.ttf") format("truetype");
+}
+
 @keyframes rupeeRise {
     0% {
         bottom: 130px;
@@ -35,7 +40,7 @@
     }
 }
 #instructions {
-    font-family: italic'HenryMorganHand', sans-serif;
+    font-family: 'Parisienne-Regular', sans-serif;
     position: absolute;
     left: 50%;
     top: 60%;
@@ -160,7 +165,7 @@ label {
 }
 
 #letter {
-    font-family: 'HenryMorganHand', sans-serif;
+    font-family: 'Parisienne-Regular', sans-serif;
     display: block;
     position: relative;
     left: 50%;
@@ -181,11 +186,11 @@ label {
     width: 80%;
     padding-left: 17%;
     margin-top: 10%;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .letter-info h3{
-    font-size: 30px;
+    font-size: 18px;
 }
 
 .img-fondo{

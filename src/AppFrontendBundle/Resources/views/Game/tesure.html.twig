@@ -9,6 +9,8 @@
     <body>
         <img class="img-fondo" src="{{ asset("bundles/appfrontend/images/casa-dentro.jpg") }}" class="center-block"/>
         <div class="row">
+            {{ parent() }}
+            <div class="data-invitation" data-slug="{{ slug }}"></div>
             <div>
                 <input type="checkbox" id="top-checkbox"/>
                 <label for="top-checkbox" id="treasurechest">
@@ -17,17 +19,17 @@
                 <div id="treasurechest-bottom"></div>
                 <div id="treasurechest-bg"></div>
                 <div class="rupee" id="rupee"></div>
-                <div class="letter" id="letter">
+                <div class="letter hidden" id="letter">
                     <div class="letter-info">
                         <h3>Hola <b>{{ invitation.name }} {{ invitation.lastname }}</b>.</h3>
-                        <p>Estas cordialmente invitado a la {{ dataInvitation.presentation }}.</p>
-                        <p>Que tendra lugar el día <time>{{ dataInvitation.dataInvitation|date('d M Y') }}</time>.</p>
-                        <p>En el salon de clases {{ dataInvitation.livingRoom }}.</p>
-                        <p>Hora inicio <time>{{ dataInvitation.dataInvitation|date('H:i:s') }}</time>.</p>
+                        <p>Estas cordialmente invitado a la <b>{{ dataInvitation.presentation }}</b>.</p>
+                        <p>Que tendra lugar el día <time><b>{{ dataInvitation.dataInvitation|date('d M Y') }}</b></time>.</p>
+                        <p>En el salon de clases {{ dataInvitation.livingRoom }}</b>.</p>
+                        <p>Hora inicio <time><b>{{ dataInvitation.dataInvitation|date('H:i:s') }}</b></time>.</p>
                         <ul>
                             <p>Estan cordialmente invitados por:</p>
                             {% for host in dataInvitation.hosts %}
-                                <li>{{ host }}</li>
+                                <li><b>{{ host }}</b></li>
                             {% endfor %}
                         </ul>
                     </div>
@@ -44,48 +46,6 @@
             {{ parent() }}
             <script src="{{  asset('bundles/appfrontend/js/app.js') }}" ></script>
             <script src="{{  asset('bundles/appfrontend/js/tesure.js') }}" ></script>
-
-            <script>
-                $(document).ready(function(){
-                    "use strict";
-
-                    app.tesure = {
-                        treasure: "You Found a Rupee",
-                        tresString: "",
-                        getTresString: function(){
-                            app.tesure.tresString = app.tesure.treasure.split("");
-                        },
-                        getData: function(){
-                            app.tesure.getTresString();
-                            document.getElementById('top-checkbox').addEventListener('change', function(e){
-                                if(e.currentTarget.checked === true){
-                                    var audio = document.getElementById("treasure-sound");
-                                    audio.play(); 
-
-                                    audio.onended = function() {
-                                        app.tesure.showLetter();
-                                    };
-
-                                } else {
-                                    var curLet = 0; 
-                                    var audio = document.getElementById("treasure-sound");
-                                    audio.pause();
-                                    audio.currentTime = 0;
-
-                                    $(".letter").addClass("hidden");
-                                    $(".rupee").removeClass("hidden");
-                                }
-                            });
-                        },
-                        showLetter: function(){
-                            $(".letter").removeClass("hidden");
-                            $(".rupee").addClass("hidden");
-                        }
-                    };
-
-                    window.onload = app.tesure.getData();
-                });
-            </script>
         {% endblock %}
     </body>
 {% endblock %}

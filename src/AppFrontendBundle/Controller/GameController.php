@@ -3,6 +3,7 @@
 namespace AppFrontendBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 
 class GameController extends Controller {
     public function indexAction($slug){
@@ -22,5 +23,27 @@ class GameController extends Controller {
             "invitation" => $invitation,
             "dataInvitation" => $dataInvitation
         ));
+    }
+    
+    public function userViewInvitationAction($slug) {
+        
+        $em = $this->getDoctrine()->getManager();
+        $invitation = $em->getRepository("AppModelBundle:Invitation")->findOneBy(array("slug" => $slug));
+        $response = new Response;
+        
+        $response->headers->set('Content-Type', 'application/json');
+        
+        if($invitation){
+            $invitation->setViewed(true);
+            
+            $em->persist($invitation);
+            $em->flush();
+            
+            $response = new Response(json_encode(array('ok' => true)));
+            return $response;
+        }
+        
+        $response = new Response(json_encode(array('error' => true)));
+        return $response;
     }
 }

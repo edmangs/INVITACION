@@ -12,9 +12,18 @@
         <div class="container">
             <div class="data-invitation" data-slug="{{ slug }}"></div>
             <div class="col-xs-12">
-                <h1 class="text-center" id="titulo">Bienvenido puedes buscar tu invitación en la casa</h1>
+                <div class="alert alert-info">
+                    <h3 class="text-center" id="titulo">Bienvenido puede buscar tu invitación en la casa</h3>
+                </div>
                 <canvas id="campo" class="campo" width="500" height="500"></canvas>
-                <p class="text-center">Se mueven con las flechas del teclado</p>
+                
+                <br/>
+                
+                <div class="alert alert-success">
+                    <p class="text-center">Puedes mover el personaje con las teclas
+                        <img class="img-responsive center-block" src="{{ asset("bundles/appfrontend/images/key_arrows.jpg") }}" />
+                    </p>
+                </div>
             </div>
         </div>
     </div>
