@@ -14,6 +14,12 @@ class GameController extends Controller {
     
     public function tesureAction($slug){
         
+        if(!$slug){
+            $this->getRequest()->getSession()->getFlashBag()->add("error", "No existe un usuario al cual presentarle la invitación.");
+            
+            return $this->redirect($this->generateUrl("app_frontend_game_index"));
+        }
+        
         $em = $this->getDoctrine()->getManager();
         $invitation = $em->getRepository("AppModelBundle:Invitation")->findOneBy(array("slug" => $slug));
         $dataInvitation = $em->getRepository("AppModelBundle:DataInvitation")->findOneBy(array("active" => true));

@@ -38,10 +38,10 @@ class InvitationAdminController extends CRUDController{
                         
                         $this->getRequest()->getSession()->getFlashBag()->add("success", "Se envió el correo de forma correcta.");
                     }else{
-                        $this->getRequest()->getSession()->getFlashBag()->add("error", "Se presento un problema al enviar el correo electrónico.");
+                        $this->getRequest()->getSession()->getFlashBag()->add("error", "Se presentó un problema al enviar el correo electrónico.");
                     }
                 } catch (\Exception $e) {
-                    $this->getRequest()->getSession()->getFlashBag()->add("error", "Se presento un problema al enviar el correo electrónico.");
+                    $this->getRequest()->getSession()->getFlashBag()->add("error", "Se presentó un problema al enviar el correo electrónico.");
                 }
             }
                     
