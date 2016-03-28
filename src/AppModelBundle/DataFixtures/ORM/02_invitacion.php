@@ -33,7 +33,10 @@ class FixturesInvitacion extends AbstractFixture implements OrderedFixtureInterf
         
         
         $entities = array(
-            array('name' => "Edwin Eduardo", "lastname" => "Gutierrez Cervera", "email" => "edwine.gutierrezc@utadeo.edu.co")
+            array('name' => "Edwin Eduardo", "lastname" => "Gutierrez Cervera", "email" => "edwine.gutierrezc@utadeo.edu.co"),
+            array('name' => "Camilo", "lastname" => "Diaz Jaimes", "email" => "camilo.diazj@utadeo.edu.co"),
+            array('name' => "Faiber Fernando", "lastname" => "Valenzuela Torres", "email" => "faiberf.valenzuelat@utadeo.edu.co"),
+            array('name' => "Geovanni Alexander", "lastname" => "Engativa Montana", "email" => "geovannia.engativam@utadeo.edu.co")
         );
         
         foreach ($entities as $entity) {
