@@ -24,6 +24,12 @@ class GameController extends Controller {
         $invitation = $em->getRepository("AppModelBundle:Invitation")->findOneBy(array("slug" => $slug));
         $dataInvitation = $em->getRepository("AppModelBundle:DataInvitation")->findOneBy(array("active" => true));
         
+        if(!$invitation){
+            $this->getRequest()->getSession()->getFlashBag()->add("error", "No existe un usuario al cual presentarle la invitación.");
+            
+            return $this->redirect($this->generateUrl("app_frontend_game_index"));
+        }
+        
         return $this->render('AppFrontendBundle:Game:tesure.html.twig', array(
             "slug" => $slug,
             "invitation" => $invitation,
