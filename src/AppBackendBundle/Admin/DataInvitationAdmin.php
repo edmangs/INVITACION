@@ -53,7 +53,8 @@ class DataInvitationAdmin extends Admin
             ->add('presentation')
             ->add('active')
             ->add('dataInvitation', 'sonata_type_datetime_picker', array(
-                'format' => 'YYYY-MM-dd HH:mm:ss'
+                'dp_language'=>'es',
+                'format'=>'dd/MM/yyyy HH:mm:ss'
             ))
             ->add('hosts')
         ;
@@ -84,4 +85,5 @@ class DataInvitationAdmin extends Admin
                 ->addViolation("No se pueden tener mas de una invitación activa");
         }
     }
+    
 }
