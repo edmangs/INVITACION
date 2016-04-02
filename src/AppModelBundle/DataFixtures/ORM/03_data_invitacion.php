@@ -33,7 +33,7 @@ class FixturesDataInvitacion extends AbstractFixture implements OrderedFixtureIn
         $em = $this->container->get('doctrine')->getEntityManager();
         
         $entities = array(
-            array('livingRoom' => "Modulo 7A 302", "hosts" => array("Edwin Gutierrez", "Dos"), "presentation" => "presentacion de pensar complejo")
+            array('livingRoom' => "Modulo 7A 302", "hosts" => array("Edwin Gutierrez", "Dos"), "presentation" => "presentación de pensar complejo")
         );
         
         foreach ($entities as $entity) {

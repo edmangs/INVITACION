@@ -21,13 +21,13 @@
                 <div class="rupee" id="rupee"></div>
                 <div class="letter hidden" id="letter">
                     <div class="letter-info">
-                        <h3>Hola <b>{{ invitation.name }} {{ invitation.lastname }}</b>.</h3>
-                        <p>Estas cordialmente invitado a la <b>{{ dataInvitation.presentation }}</b>.</p>
-                        <p>Que tendra lugar el día <time><b>{{ dataInvitation.dataInvitation|date('d M Y') }}</b></time>.</p>
-                        <p>En el salon de clases {{ dataInvitation.livingRoom }}</b>.</p>
+                        <h3>Hola, <b>{{ invitation.name }} {{ invitation.lastname }}</b>.</h3>
+                        <p>Estás cordialmente invitado a la <b>{{ dataInvitation.presentation }}</b>.</p>
+                        <p>Que tendrá lugar el día <time><b>{{ dataInvitation.dataInvitation|date('d M Y') }}</b></time>.</p>
+                        <p>En el salón de clases {{ dataInvitation.livingRoom }}</b>.</p>
                         <p>Hora inicio <time><b>{{ dataInvitation.dataInvitation|date('H:i:s') }}</b></time>.</p>
                         <ul>
-                            <p>Estan cordialmente invitados por:</p>
+                            <p>Están cordialmente invitados por:</p>
                             {% for host in dataInvitation.hosts %}
                                 <li><b>{{ host }}</b></li>
                             {% endfor %}
