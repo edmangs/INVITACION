@@ -1,6 +1,7 @@
 {% extends "::base.html.twig" %}
 
-{% block body %} 
+{% block body %}
+
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -20,19 +21,19 @@
         <!-- Team Members Row -->
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="page-header">Importante</h2>
+                <h2 class="page-header">Lo sentimos</h2>
             </div>
+            
             <div class="col-lg-12 col-sm-12 text-center">
-                <img class="img-circle img-responsive img-center center-block" src="{{ asset("/bundles/appfrontend/images/complejidad.jpg") }}" alt="">
-                <h3>
-                    <small>Para saber más</small> 
-                    Busca la invitación
-                </h3>
-                <p>Hola usuario para ver tu invitación te invitamos a que revices tu correo electronico terminado en @utadeo.edu.co</p>
+                <p>Ocurrio un problema en la aplicación "error {{ status_code }} {{ status_text }}"</p>
+                <a href="{{ path("app_frontend_homepage") }}">
+                    <img class="img-circle img-responsive img-center center-block" src="{{ asset("/bundles/appfrontend/images/complejidad.jpg") }}" alt="">
+                </a>
             </div>
         </div>
 
         <hr>
 
     </div>
+        
 {% endblock %}

@@ -1,6 +1,10 @@
 app_frontend_game_index:
     path:     /{slug}
     defaults: { _controller: AppFrontendBundle:Game:index, slug: null } 
+
+app_frontend_game_tesure_test:
+    path:     /tesure/
+    defaults: { _controller: AppFrontendBundle:Game:tesure, slug: null } 
     
 app_frontend_game_tesure:
     path:     /tesure/{slug}

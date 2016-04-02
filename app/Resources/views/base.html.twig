@@ -17,6 +17,8 @@
     <body>
         {% block body %}
             {{ getTokens() }}
+            
+            {% include 'AppBackendBundle:Default:flash.message.html.twig' %}
         {% endblock %}
         {% block javascripts %}
             <script src="{{  asset('bundles/appfrontend/js/jquery-2.1.4.min.js') }}" ></script>
