@@ -33,7 +33,9 @@ class InvitationAdmin extends Admin
             ->add('name')
             ->add('lastname')
             ->add('email')
-            ->add('viewed')
+            ->add('viewed', null, array(
+                'editable' => true
+            ))
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'show' => array(),
@@ -56,6 +58,7 @@ class InvitationAdmin extends Admin
             ->add('name')
             ->add('lastname')
             ->add('email')
+            ->add('viewed')
         ;
     }
 
