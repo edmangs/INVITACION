@@ -24,7 +24,7 @@
                         <h3>Hola, <b>{{ invitation.name }} {{ invitation.lastname }}</b>.</h3>
                         <p>Estás cordialmente invitado a la <b>{{ dataInvitation.presentation }}</b>.</p>
                         <p>Que tendrá lugar el día <time><b>{{ dataInvitation.dataInvitation|date('d M Y') }}</b></time>.</p>
-                        <p>En el salón de clases {{ dataInvitation.livingRoom }}</b>.</p>
+                        <p>{{ dataInvitation.livingRoom }}</b>.</p>
                         <p>Hora inicio <time><b>{{ dataInvitation.dataInvitation|date('H:i:s') }}</b></time>.</p>
                         <ul>
                             <p>Están cordialmente invitados por:</p>

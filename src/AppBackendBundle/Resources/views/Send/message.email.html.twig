@@ -4,6 +4,9 @@
             <p style="background: #c3c3c3; border-radius: 5px; color: white; text-align: center; padding: 10px;">
                 Hola, <b>{{ user.name }} {{ user.lastname }}</b>
             </p>
+            {% if entity.new is defined and entity.new is not null %}
+                <b style="padding: 10px 0px;">{{ entity.new }}</b>
+            {% endif %}
             <p>Estás cordialmente invitado a la <b>{{ entity.presentation }}</b></p>
             <p>Para obtener toda la información necesaria acede
                 <a 

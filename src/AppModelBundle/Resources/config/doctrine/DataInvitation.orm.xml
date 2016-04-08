@@ -14,6 +14,7 @@
     <field name="presentation" type="string" column="presentation" nullable="0" length="255"/>
     <field name="hosts" type="array" column="hosts" nullable="0"/>
     <field name="active" type="boolean" column="active" nullable="0"/>
+    <field name="new" type="text" column="new" nullable="1"/>
     
     <field name="created" type="datetime">
         <gedmo:timestampable on="create"/>

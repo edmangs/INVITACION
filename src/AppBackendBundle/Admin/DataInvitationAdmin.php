@@ -52,6 +52,7 @@ class DataInvitationAdmin extends Admin
             ->add('livingRoom')
             ->add('presentation')
             ->add('active')
+            ->add('new')
             ->add('dataInvitation', 'sonata_type_datetime_picker', array(
                 'dp_language'=>'es',
                 'format'=>'dd/MM/yyyy HH:mm:ss'
@@ -69,6 +70,7 @@ class DataInvitationAdmin extends Admin
             ->add('livingRoom')
             ->add('dataInvitation')
             ->add('hosts')
+            ->add('new')
             ->add('created')
             ->add('updated')
             ->add('id')

@@ -10,19 +10,30 @@
     
     <div class="row">
         <div class="container">
-            <div class="data-invitation" data-slug="{{ slug }}"></div>
-            <div class="col-xs-12">
-                <div class="alert alert-info">
-                    <h3 class="text-center" id="titulo">Bienvenido puede buscar tu invitación en la casa</h3>
-                </div>
-                <canvas id="campo" class="campo" width="500" height="500"></canvas>
-                
-                <br/>
-                
-                <div class="alert alert-success">
-                    <p class="text-center">Puedes mover el personaje con las teclas
-                        <img class="img-responsive center-block" src="{{ asset("bundles/appfrontend/images/key_arrows.jpg") }}" />
+            <div class="hidden-md hidden-lg">
+                <div class="alert alert-info text-center">
+                    <p>
+                        Lo siente la aplicación no se puede ajustar a dispositivos móviles, 
+                        te invitamos a que uses un navegador de escritorio para que disfrutes de toda la información.
                     </p>
+                </div>
+                <img class="img-circle img-responsive img-center center-block" src="{{ asset("/bundles/appfrontend/images/complejidad.jpg") }}" alt="">
+            </div>
+            <div class="hidden-sm hidden-xs">
+                <div class="data-invitation" data-slug="{{ slug }}"></div>
+                <div class="col-xs-12">
+                    <div class="alert alert-info">
+                        <h3 class="text-center" id="titulo">Bienvenido puede buscar tu invitación en la casa</h3>
+                    </div>
+                    <canvas id="campo" class="campo" width="500" height="500"></canvas>
+
+                    <br/>
+
+                    <div class="alert alert-success">
+                        <p class="text-center">Puedes mover el personaje con las teclas
+                            <img class="img-responsive center-block" src="{{ asset("bundles/appfrontend/images/key_arrows.jpg") }}" />
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

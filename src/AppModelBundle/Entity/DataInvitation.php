@@ -231,4 +231,33 @@ class DataInvitation
     {
         return $this->active;
     }
+    /**
+     * @var string
+     */
+    private $new;
+
+
+    /**
+     * Set new
+     *
+     * @param string $new
+     *
+     * @return DataInvitation
+     */
+    public function setNew($new)
+    {
+        $this->new = $new;
+
+        return $this;
+    }
+
+    /**
+     * Get new
+     *
+     * @return string
+     */
+    public function getNew()
+    {
+        return $this->new;
+    }
 }
